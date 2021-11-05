@@ -1,28 +1,35 @@
 "use strict";
 
 window.onload = function() {
-    let search = document.getElementsByTagName("button")[0];
+    let btn = document.getElementById("lookup");
+    let search = document.getElementsByTagName("input")[0];
+    let result = document.getElementById("result");
 
-    search.addEventListener('click', function(element) {
+    btn.addEventListener('click', function(element) {
         element.preventDefault();
-
         var text = search.value.trim();
-        if(/^[a-zA-Z]/.test(text)) {
 
+        // remove previous result
+        result.innerHTML = "";
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200) {
+                result.innerHTML = this.responseText;
+            }
+        };
+
+        if(text.length == 0) { 
+            xmlhttp.open("GET", "world.php", true);
+            xmlhttp.send();
+        }
+        else if(/[a-zA-Z]/.test(text)) {
+            xmlhttp.open("GET", "world.php?country="+text, true);
+            xmlhttp.send();
         }
         else {
             alert("Please enter only letters.");
         }
-    })
+    });
 
-    function getCountry() {
-        if (httpRequest.readyState === XMLHttpRequest.DONE) {
-          if (httpRequest.status === 200) {
-            var response = httpRequest.responseText;
-            alert(response);
-          } else {
-            alert('There was a problem with the request.');
-          }
-        }
-      }
 };
