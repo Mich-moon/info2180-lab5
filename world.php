@@ -14,7 +14,14 @@ if(isset($_GET['country'])) {
     $stmt = $conn->query("SELECT * FROM countries");
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-var_dump($results);
+
+$table = "<tr><th>Country Name</th><th>Continent</th><th>Independence Year</th><th>Head of state</th></tr>";
+foreach ($results as $row) {
+    $table.= "<tr><td>".$row['name']."</td><td>".$row['continent']."</td>";
+    $table.= "<td>".$row['independence_year']."</td><td>".$row['head_of_state']."</td><tr>";
+}
+
+var_dump($table);
 
 ?>
 <ul>
