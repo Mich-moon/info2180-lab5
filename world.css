@@ -16,10 +16,7 @@ button {
   transition: all 0.15s ease-in-out;
   cursor: pointer;
   margin: 10px;
-}
-
-button:hover {
-  background-color: rgb(71, 200, 209);
+  color: white;
 }
 
 #controls {
@@ -28,7 +25,7 @@ button:hover {
 }
 
 header {
-  background-color: rgb(1, 148, 158);
+  background-color: rgb(10, 110, 117);
   color: white;
   display: flex;
   justify-content: center;
@@ -45,4 +42,20 @@ label {
   margin: 10px;
   display: flex;
   align-self: center;
+}
+
+#lookup-cities {
+  background-color: rgb(28, 169, 224);
+}
+
+#lookup-cities:hover {
+  background-color: rgb(100, 205, 247);
+}
+
+#lookup-countries {
+  background-color: rgb(106, 56, 197);
+}
+
+#lookup-countries:hover {
+  background-color: rgb(118, 103, 255);
 }
