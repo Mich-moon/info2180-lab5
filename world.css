@@ -29,8 +29,15 @@ header {
   color: white;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 40px 0px 40px 0px;
   margin-bottom: 20px;
+}
+
+img {
+  display: block;
+  margin-right: 50px;
+  width: 20%;
 }
 
 input {
