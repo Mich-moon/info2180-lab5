@@ -14,7 +14,7 @@ window.onload = function() {
         // remove previous result
         result.innerHTML = "";
 
-        var xmlhttp = new XMLHttpRequest();
+        let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if(this.readyState == 4 && this.status == 200) {
                 result.innerHTML = this.responseText;
@@ -40,7 +40,7 @@ window.onload = function() {
         // remove previous result
         result.innerHTML = "";
 
-        var xmlhttp = new XMLHttpRequest();
+        let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if(this.readyState == 4 && this.status == 200) {
                 result.innerHTML = this.responseText;
