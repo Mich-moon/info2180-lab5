@@ -6,10 +6,9 @@ window.onload = function() {
     let search = document.getElementsByTagName("input")[0];
     let result = document.getElementById("result");
 
-    let text = search.value.trim();
-
     btnCountry.addEventListener('click', function(element) {
         element.preventDefault();
+        let text = search.value.trim();
         
         // remove previous result
         result.innerHTML = "";
@@ -36,6 +35,7 @@ window.onload = function() {
 
     btnCity.addEventListener('click', function(element) {
         element.preventDefault();
+        let text = search.value.trim();
 
         // remove previous result
         result.innerHTML = "";
